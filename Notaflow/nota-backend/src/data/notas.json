@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Welcome note",
+    "content": "This is your first Notion-like note.",
+    "createdAt": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Ideas",
+    "content": "Here you can store ideas for your portfolio.",
+    "createdAt": "2025-01-02T09:30:00Z"
+  }
+]
