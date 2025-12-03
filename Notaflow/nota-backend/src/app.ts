@@ -7,9 +7,10 @@ import realNotasRoutes from "./routes/notas.routes";
 import dotenv from "dotenv";
 import cloudinary from "./config/cloudinary";
 
-dotenv.config({
-  path: path.resolve(process.cwd(), "src", "config", "config.env"),
-});
+dotenv.config();
+//dotenv.config({
+//  path: path.resolve(process.cwd(), "src", "config", "config.env"),
+//});
 
 console.log("Cloudinary ready:", cloudinary.config().cloud_name);
 
