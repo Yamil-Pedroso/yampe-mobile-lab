@@ -35,8 +35,8 @@ export const UserService = {
 
     const token = jwt.sign(
       { id: user.id, email: user.email, is_logout: false },
-      CONFIG.jwt.secret,
-      { expiresIn: CONFIG.jwt.expiresIn }
+      CONFIG.jwt.secret!,
+      { expiresIn: CONFIG.jwt.expiresIn! }
     );
 
     return { user, token };
@@ -54,8 +54,8 @@ export const UserService = {
 
     const token = jwt.sign(
       { id: user.id, email: user.email, is_logout: false },
-      CONFIG.jwt.secret,
-      { expiresIn: CONFIG.jwt.expiresIn }
+      CONFIG.jwt.secret!,
+      { expiresIn: CONFIG.jwt.expiresIn! }
     );
 
     return {
