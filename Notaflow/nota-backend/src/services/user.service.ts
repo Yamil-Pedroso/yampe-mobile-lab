@@ -36,7 +36,7 @@ export const UserService = {
     console.log("JWT SECRET =>", CONFIG.jwt.secret);
 
     const token = jwt.sign(
-      { id: user.id, email: user.email, is_logout: false },
+      { id: user.id, email: user.email, role: user.role, is_logout: false },
       CONFIG.jwt.secret!,
       { expiresIn: CONFIG.jwt.expiresIn! }
     );
@@ -55,7 +55,7 @@ export const UserService = {
     await UserModel.setLogoutState(user.id, false);
 
     const token = jwt.sign(
-      { id: user.id, email: user.email, is_logout: false },
+      { id: user.id, email: user.email, role: user.role, is_logout: false },
       CONFIG.jwt.secret!,
       { expiresIn: CONFIG.jwt.expiresIn! }
     );
@@ -66,6 +66,7 @@ export const UserService = {
         name: user.name,
         email: user.email,
         avatar: user.avatar,
+        role: user.role,
         is_logout: false,
       },
       token,

@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { UserService } from "../services/user.service";
+import { AuthRequest } from "../middlewares/auth.middleware";
 
 export const UserController = {
   async register(req: Request, res: Response) {
@@ -25,6 +26,10 @@ export const UserController = {
     } catch (err: any) {
       res.status(401).json({ error: err.message });
     }
+  },
+
+  me(req: AuthRequest, res: Response) {
+    return res.json(req.user);
   },
 
   async getUser(req: Request, res: Response) {

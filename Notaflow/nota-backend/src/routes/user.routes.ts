@@ -11,6 +11,8 @@ router.post("/register", upload.single("avatar"), UserController.register);
 
 router.post("/login", UserController.login);
 
+router.get("/me", authMiddleware, UserController.me);
+
 router.get("/", authMiddleware, UserController.getAll);
 router.get("/:id", authMiddleware, UserController.getUser);
 router.post("/logout", authMiddleware, UserController.logout);
